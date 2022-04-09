@@ -18,8 +18,20 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
+<?php
+  
+    //sesuaikan dengan database, username, dan password kalian masing-masing
+    $servername     = "localhost";
+    $database       = "wilayah"; 
+    $username       = "root";
+    $password       = "";
 
+    // membuat koneksi
+    $conn   = mysqli_connect($servername, $username, $password, $database);
+?>
 <body>
+
+	
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth px-0">
@@ -29,8 +41,20 @@
               <div class="brand-logo">
                 <img src="images/logo.svg" alt="logo">
               </div>
+			 
               <h2 class="font-weight-light">Form Pemilihan Wilayah</h2>
-              <form class="pt-3" id="idForm" action="http://localhost/latihan_oop_api/register.php">
+
+              <form class="pt-3" id="idForm" action="http://localhost/github/OOP/Tugas_individu_2/oop_api/form.php"method="post">
+			   <div class="form-group">
+			   <select name="provinsi" id="provinsi" class="form-control" required>
+			   <option value="">Pilih Provinsi</option>
+			   <?php
+			   $sql_provinsi = mysqli_query($con, "SELECT * FROM tbl_provinsi") or die
+					(mysqli_error($con));
+			   while($data_provinsi = mysqli_fetch_array($sql_provinsi)) {
+				   echo '<option value="'.$data_provinsi['id_provinsi'].'">'.$data_provinsi['nama_provinsi'].'</option>';
+			   }  
+			   ?>
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="user_name" placeholder="Username">
                 </div>
