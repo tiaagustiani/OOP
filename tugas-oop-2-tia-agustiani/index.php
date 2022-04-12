@@ -92,7 +92,7 @@
           <!-- Copyright -->
           <div class="text-center p-3 text-white font-weight-bold " style="background-color: #383a3d;">
           2022 <br>
-          <a class="text-white" href="https://github.com/tiaagustiani/OOP.git">My Github - Tia Agustiani</a>
+          <a class="text-white" href="https://github.com/tiaagustiani/tugas-oop-2-tia-agustiani.git">My Github - Tia Agustiani</a>
           </div>
           <!-- Copyright -->
           </footer>
